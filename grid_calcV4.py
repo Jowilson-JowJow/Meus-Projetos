@@ -38,4 +38,4 @@ for(texto, linha, coluna) in botoes:
 
 botaoLimpar= tk.Button(janela, text="C", width=26, height=2, bg="red", fg="white",command=limpar).grid(row=5, column=0, columnspan=4, padx=2, pady=1)
 
-janela.mainloop()
+janela.mainloop() #para manter a tela sempre aberta
