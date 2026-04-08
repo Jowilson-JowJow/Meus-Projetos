@@ -33,7 +33,6 @@ for i, turma in enumerate(turmas):
         for b in range(4):
             col_base = 2 + b*6
             
-            # Coleta as coordenadas das células para a fórmula
             n1 = ws.cell(row=row, column=col_base).coordinate
             n2 = ws.cell(row=row, column=col_base+1).coordinate
             n3 = ws.cell(row=row, column=col_base+2).coordinate
@@ -41,26 +40,13 @@ for i, turma in enumerate(turmas):
             atv2 = ws.cell(row=row, column=col_base+4).coordinate
             
             media_cell = ws.cell(row=row, column=col_base+5)
-            
-            # média do bimestre com arredondamento para 0.5 e limite máximo 10
-            media_cell.value = (
-                f"=MIN(ROUND(((({n1}+{n2}+{n3})/3)+{atv1}+{atv2})*2,0)/2,10)"
-            )
-            
 
-            # Média do bimestre (Fórmula Excel padrão Inglês)
-            # Nota: Dividir por 3 e somar atividades
             media_cell.value = f"=(({n1}+{n2}+{n3})/3)+{atv1}+{atv2}"
 
             medias.append(media_cell.coordinate)
         
         m1, m2, m3, m4 = medias
         media_anual = ws.cell(row=row, column=26)
-        
-
-        # média progressiva + arredondamento para 0.5 (mantida)
-
-        # Lógica progressiva para Média Anual (Trata zeros como bimestre não cursado)
 
         media_anual.value = (
             f'=ROUND(('
@@ -71,23 +57,22 @@ for i, turma in enumerate(turmas):
             f')*2,0)/2'
         )
         
-        # Status final
         status = ws.cell(row=row, column=27)
         status.value = f'=IF({media_anual.coordinate}>=6,"Aprovado","Exame")'
 
-# 3. Lógica de Salvamento Robusta
+# 3. Salvamento no caminho especificado
 nome_arquivo = "planilha_turmas.xlsx"
 
-# Obtém o caminho absoluto da pasta onde o script está
-diretorio_script = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(diretorio_script, nome_arquivo)
+# 🔴 ALTERAÇÃO AQUI
+diretorio_destino = r"C:\Users\capta\Desktop\ANO 2026"
 
-# CORREÇÃO: Garante que a pasta de destino realmente existe
-if not os.path.exists(diretorio_script):
-    os.makedirs(diretorio_script)
+# Garante que a pasta existe
+if not os.path.exists(diretorio_destino):
+    os.makedirs(diretorio_destino)
+
+file_path = os.path.join(diretorio_destino, nome_arquivo)
 
 try:
-    # Tenta salvar o arquivo
     wb.save(file_path)
     print("-" * 50)
     print(f"SUCESSO: Arquivo criado em:\n{file_path}")
@@ -96,4 +81,3 @@ except PermissionError:
     print("ERRO: O arquivo já está aberto no Excel. Feche-o e tente novamente.")
 except Exception as e:
     print(f"ERRO AO SALVAR: {e}")
-    
