@@ -4,6 +4,18 @@ wb = Workbook()
 
 turmas = ["2A","2B","2C","2D","3A","3B","3C","3D"]
 
+# LISTA DE ALUNOS POR TURMA (edite conforme necessário)
+alunos_por_turma = {
+    "2A": ["Ana Silva", "Bruno Souza", "Carlos Lima"],
+    "2B": ["Daniela Rocha", "Eduardo Alves"],
+    "2C": [],
+    "2D": [],
+    "3A": ["Fernanda Costa", "Gabriel Martins"],
+    "3B": [],
+    "3C": [],
+    "3D": []
+}
+
 for i, turma in enumerate(turmas):
     if i == 0:
         ws = wb.active
@@ -22,8 +34,12 @@ for i, turma in enumerate(turmas):
     
     ws.append(headers)
     
-    for row in range(2, 42):
-        ws.cell(row=row, column=1, value=f"Aluno {row-1}")
+    # pega a lista de alunos da turma atual
+    lista_nomes = alunos_por_turma.get(turma, [])
+    
+    # percorre apenas a quantidade real de alunos
+    for row, nome in enumerate(lista_nomes, start=2):
+        ws.cell(row=row, column=1, value=nome)
         
         medias = []
 
@@ -49,7 +65,7 @@ for i, turma in enumerate(turmas):
         
         media_anual = ws.cell(row=row, column=26)
         
-        # média progressiva + arredondamento para 0.5 (mantida)
+        # média progressiva + arredondamento para 0.5
         media_anual.value = (
             f'=ROUND(('
             f'IF({m2}=0,{m1},'
