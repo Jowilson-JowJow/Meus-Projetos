@@ -42,27 +42,26 @@ for i, turma in enumerate(turmas):
             
             media_cell = ws.cell(row=row, column=col_base+5)
             
-<<<<<<< HEAD
             # média do bimestre com arredondamento para 0.5 e limite máximo 10
             media_cell.value = (
                 f"=MIN(ROUND(((({n1}+{n2}+{n3})/3)+{atv1}+{atv2})*2,0)/2,10)"
             )
             
-=======
+
             # Média do bimestre (Fórmula Excel padrão Inglês)
             # Nota: Dividir por 3 e somar atividades
             media_cell.value = f"=(({n1}+{n2}+{n3})/3)+{atv1}+{atv2}"
->>>>>>> fcda3111134d135b69850d1239dc2be7af45a34c
+
             medias.append(media_cell.coordinate)
         
         m1, m2, m3, m4 = medias
         media_anual = ws.cell(row=row, column=26)
         
-<<<<<<< HEAD
+
         # média progressiva + arredondamento para 0.5 (mantida)
-=======
+
         # Lógica progressiva para Média Anual (Trata zeros como bimestre não cursado)
->>>>>>> fcda3111134d135b69850d1239dc2be7af45a34c
+
         media_anual.value = (
             f'=ROUND(('
             f'IF({m2}=0,{m1},'
