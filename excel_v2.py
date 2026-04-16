@@ -4,7 +4,11 @@ wb = Workbook()
 
 turmas = ["2A","2B","2C","2D","3A","3B","3C","3D"]
 
+
 # (mantive sua estrutura original de alunos sem alterações)
+
+# LISTA DE ALUNOS POR TURMA (edite conforme necessário)
+
 alunos_por_turma = {
     "2A": [
     "ABNER ALMEIDA ESCALANTE BARBOZA",
@@ -309,6 +313,7 @@ alunos_por_turma = {
 }
 
 
+
 for i, turma in enumerate(turmas):
     if i == 0:
         ws = wb.active
@@ -316,6 +321,9 @@ for i, turma in enumerate(turmas):
     else:
         ws = wb.create_sheet(title=turma)
     
+
+    # Cabeçalhos com N4 e média para cada bimestre
+
     headers = [
         "Nome",
         "N1_B1","N2_B1","N3_B1","N4_B1","Atv1_B1","Atv2_B1","Media_B1",
@@ -325,53 +333,5 @@ for i, turma in enumerate(turmas):
         "Media_Anual","Status"
     ]
     
-    ws.append(headers)
-    
-    lista_nomes = alunos_por_turma.get(turma, [])
-    
-    for row, nome in enumerate(lista_nomes, start=2):
-        ws.cell(row=row, column=1, value=nome)
-        
-        medias = []
 
-        for b in range(4):
-            col_base = 2 + b*7  # agora são 7 colunas por bimestre
-            
-            n1 = ws.cell(row=row, column=col_base).coordinate
-            n2 = ws.cell(row=row, column=col_base+1).coordinate
-            n3 = ws.cell(row=row, column=col_base+2).coordinate
-            n4 = ws.cell(row=row, column=col_base+3).coordinate
-            atv1 = ws.cell(row=row, column=col_base+4).coordinate
-            atv2 = ws.cell(row=row, column=col_base+5).coordinate
-            
-            media_cell = ws.cell(row=row, column=col_base+6)
-            
-            # Nova regra:
-            # pega as 2 maiores entre n1,n2,n3 + n4 → divide por 3 → soma atividades
-            media_cell.value = (
-                f"=MIN(ROUND((("
-                f"(({n1}+{n2}+{n3}-SMALL({{{n1},{n2},{n3}}},1)+{n4})/3)"
-                f"+{atv1}+{atv2}"
-                f")*2,0)/2,10)"
-            )
-            
-            medias.append(media_cell.coordinate)
-        
-        m1, m2, m3, m4 = medias
-        
-        media_anual = ws.cell(row=row, column=30)
-        
-        media_anual.value = (
-            f'=ROUND(('
-            f'IF({m2}=0,{m1},'
-            f'IF({m3}=0,AVERAGE({m1},{m2}),'
-            f'IF({m4}=0,AVERAGE({m1},{m2},{m3}),'
-            f'AVERAGE({m1},{m2},{m3},{m4}))))'
-            f')*2,0)/2'
-        )
-        
-        status = ws.cell(row=row, column=31)
-        status.value = f'=IF({media_anual.coordinate}>=6,"Aprovado","Exame")'
 
-file_path = r"C:\Users\capta\Desktop\ANO 2026\planilha_turmas_v2.xlsx"
-wb.save(file_path)
