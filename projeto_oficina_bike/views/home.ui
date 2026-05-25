@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1212</width>
+    <height>706</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>120</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(180, 180, 180);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="btnMenuUsuarios">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>320</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 85, 255);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Usuarios</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnMenuClientes">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 85, 255);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Clientes</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnMenuBicicletas">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 85, 255);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Bicicletas</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnMenuServicos">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>200</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 85, 255);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Serviços</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnMenuRelatorios">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>260</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 85, 255);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Relatórios</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnMenuHome">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 85, 255);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Home</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>1061</width>
+      <height>711</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(193, 193, 193);</string>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="home">
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Home</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="listarUsuarios">
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Usuarios</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnUsuariosNovo">
+      <property name="geometry">
+       <rect>
+        <x>850</x>
+        <y>80</y>
+        <width>91</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(85, 170, 0);
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Novo Usuario</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tabelaUsuarios">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>130</y>
+        <width>831</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
+      </property>
+      <attribute name="verticalHeaderHighlightSections">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>NOME</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>EMAIL</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>SENHA</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="cadUsuario">
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>231</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Cadastro de Usuário</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>150</y>
+        <width>611</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(232, 232, 232);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="inputCadUsuarioNome">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>50</y>
+         <width>531</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>30</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Nome:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadUsuarioEmail">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>100</y>
+         <width>381</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>80</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Email:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadUsuarioSenha">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>150</y>
+         <width>231</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>130</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Senha:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>180</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Confirmar Senha:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadUsuarioConfirmarSenha">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>200</y>
+         <width>231</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnCadUsuarioCadastrar">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>260</y>
+         <width>75</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(85, 170, 0);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Cadastrar</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnCadUsuarioVoltar">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>260</y>
+         <width>75</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(126, 126, 126);</string>
+       </property>
+       <property name="text">
+        <string>Cancelar</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <!-- PAGE 3: Listar Clientes -->
+    <widget class="QWidget" name="listarClientes">
+     <widget class="QLabel" name="label_cli1">
+      <property name="geometry"><rect><x>20</x><y>10</y><width>181</width><height>41</height></rect></property>
+      <property name="font"><font><pointsize>18</pointsize><bold>true</bold></font></property>
+      <property name="text"><string>Clientes</string></property>
+     </widget>
+     <widget class="QPushButton" name="btnClientesNovo">
+      <property name="geometry"><rect><x>850</x><y>80</y><width>101</width><height>24</height></rect></property>
+      <property name="styleSheet"><string notr="true">background-color: rgb(85, 170, 0); color: rgb(255, 255, 255);</string></property>
+      <property name="text"><string>Novo Cliente</string></property>
+     </widget>
+     <widget class="QTableWidget" name="tabelaClientes">
+      <property name="geometry"><rect><x>110</x><y>130</y><width>831</width><height>471</height></rect></property>
+      <property name="columnCount"><number>5</number></property>
+      <column><property name="text"><string>ID</string></property></column>
+      <column><property name="text"><string>NOME</string></property></column>
+      <column><property name="text"><string>TELEFONE</string></property></column>
+      <column><property name="text"><string>EMAIL</string></property></column>
+      <column><property name="text"><string>ENDEREÇO</string></property></column>
+     </widget>
+    </widget>
+    <!-- PAGE 4: Cadastro de Cliente -->
+    <widget class="QWidget" name="cadCliente">
+     <widget class="QLabel" name="label_cli2">
+      <property name="geometry"><rect><x>20</x><y>20</y><width>261</width><height>21</height></rect></property>
+      <property name="font"><font><pointsize>18</pointsize><bold>true</bold></font></property>
+      <property name="text"><string>Cadastro de Cliente</string></property>
+     </widget>
+     <widget class="QFrame" name="frameCadCliente">
+      <property name="geometry"><rect><x>210</x><y>130</y><width>611</width><height>361</height></rect></property>
+      <property name="styleSheet"><string notr="true">background-color: rgb(232, 232, 232);</string></property>
+      <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+      <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+      <widget class="QLabel" name="label_cli3">
+       <property name="geometry"><rect><x>50</x><y>30</y><width>49</width><height>16</height></rect></property>
+       <property name="text"><string>Nome:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadClienteNome">
+       <property name="geometry"><rect><x>50</x><y>50</y><width>531</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QLabel" name="label_cli4">
+       <property name="geometry"><rect><x>50</x><y>80</y><width>71</width><height>16</height></rect></property>
+       <property name="text"><string>Telefone:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadClienteTelefone">
+       <property name="geometry"><rect><x>50</x><y>100</y><width>231</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QLabel" name="label_cli5">
+       <property name="geometry"><rect><x>50</x><y>130</y><width>49</width><height>16</height></rect></property>
+       <property name="text"><string>Email:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadClienteEmail">
+       <property name="geometry"><rect><x>50</x><y>150</y><width>381</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QLabel" name="label_cli6">
+       <property name="geometry"><rect><x>50</x><y>180</y><width>71</width><height>16</height></rect></property>
+       <property name="text"><string>Endereço:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadClienteEndereco">
+       <property name="geometry"><rect><x>50</x><y>200</y><width>531</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QPushButton" name="btnCadClienteCadastrar">
+       <property name="geometry"><rect><x>500</x><y>300</y><width>75</width><height>24</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(85, 170, 0); color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>Cadastrar</string></property>
+      </widget>
+      <widget class="QPushButton" name="btnCadClienteVoltar">
+       <property name="geometry"><rect><x>50</x><y>300</y><width>75</width><height>24</height></rect></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255); background-color: rgb(126, 126, 126);</string></property>
+       <property name="text"><string>Cancelar</string></property>
+      </widget>
+     </widget>
+    </widget>
+    <!-- PAGE 5: Listar Bicicletas -->
+    <widget class="QWidget" name="listarBicicletas">
+     <widget class="QLabel" name="label_bic1">
+      <property name="geometry"><rect><x>20</x><y>10</y><width>181</width><height>41</height></rect></property>
+      <property name="font"><font><pointsize>18</pointsize><bold>true</bold></font></property>
+      <property name="text"><string>Bicicletas</string></property>
+     </widget>
+     <widget class="QPushButton" name="btnBicicletasNovo">
+      <property name="geometry"><rect><x>850</x><y>80</y><width>111</width><height>24</height></rect></property>
+      <property name="styleSheet"><string notr="true">background-color: rgb(85, 170, 0); color: rgb(255, 255, 255);</string></property>
+      <property name="text"><string>Nova Bicicleta</string></property>
+     </widget>
+     <widget class="QTableWidget" name="tabelaBicicletas">
+      <property name="geometry"><rect><x>110</x><y>130</y><width>831</width><height>471</height></rect></property>
+      <property name="columnCount"><number>6</number></property>
+      <column><property name="text"><string>ID</string></property></column>
+      <column><property name="text"><string>CLIENTE</string></property></column>
+      <column><property name="text"><string>MARCA</string></property></column>
+      <column><property name="text"><string>MODELO</string></property></column>
+      <column><property name="text"><string>COR</string></property></column>
+      <column><property name="text"><string>Nº SÉRIE</string></property></column>
+     </widget>
+    </widget>
+    <!-- PAGE 6: Cadastro de Bicicleta -->
+    <widget class="QWidget" name="cadBicicleta">
+     <widget class="QLabel" name="label_bic2">
+      <property name="geometry"><rect><x>20</x><y>20</y><width>281</width><height>21</height></rect></property>
+      <property name="font"><font><pointsize>18</pointsize><bold>true</bold></font></property>
+      <property name="text"><string>Cadastro de Bicicleta</string></property>
+     </widget>
+     <widget class="QFrame" name="frameCadBicicleta">
+      <property name="geometry"><rect><x>210</x><y>130</y><width>611</width><height>361</height></rect></property>
+      <property name="styleSheet"><string notr="true">background-color: rgb(232, 232, 232);</string></property>
+      <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+      <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+      <widget class="QLabel" name="label_bic3">
+       <property name="geometry"><rect><x>50</x><y>30</y><width>71</width><height>16</height></rect></property>
+       <property name="text"><string>Cliente:</string></property>
+      </widget>
+      <widget class="QComboBox" name="comboCadBicicletaCliente">
+       <property name="geometry"><rect><x>50</x><y>50</y><width>531</width><height>22</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QLabel" name="label_bic4">
+       <property name="geometry"><rect><x>50</x><y>80</y><width>49</width><height>16</height></rect></property>
+       <property name="text"><string>Marca:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadBicicletaMarca">
+       <property name="geometry"><rect><x>50</x><y>100</y><width>231</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QLabel" name="label_bic5">
+       <property name="geometry"><rect><x>50</x><y>130</y><width>61</width><height>16</height></rect></property>
+       <property name="text"><string>Modelo:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadBicicletaModelo">
+       <property name="geometry"><rect><x>50</x><y>150</y><width>231</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QLabel" name="label_bic6">
+       <property name="geometry"><rect><x>50</x><y>180</y><width>31</width><height>16</height></rect></property>
+       <property name="text"><string>Cor:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadBicicletaCor">
+       <property name="geometry"><rect><x>50</x><y>200</y><width>231</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QLabel" name="label_bic7">
+       <property name="geometry"><rect><x>350</x><y>80</y><width>101</width><height>16</height></rect></property>
+       <property name="text"><string>Número de Série:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadBicicletaNumeroSerie">
+       <property name="geometry"><rect><x>350</x><y>100</y><width>231</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QPushButton" name="btnCadBicicletaCadastrar">
+       <property name="geometry"><rect><x>500</x><y>300</y><width>75</width><height>24</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(85, 170, 0); color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>Cadastrar</string></property>
+      </widget>
+      <widget class="QPushButton" name="btnCadBicicletaVoltar">
+       <property name="geometry"><rect><x>50</x><y>300</y><width>75</width><height>24</height></rect></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255); background-color: rgb(126, 126, 126);</string></property>
+       <property name="text"><string>Cancelar</string></property>
+      </widget>
+     </widget>
+    </widget>
+    <!-- PAGE 7: Listar Serviços -->
+    <widget class="QWidget" name="listarServicos">
+     <widget class="QLabel" name="label_ser1">
+      <property name="geometry"><rect><x>20</x><y>10</y><width>181</width><height>41</height></rect></property>
+      <property name="font"><font><pointsize>18</pointsize><bold>true</bold></font></property>
+      <property name="text"><string>Serviços</string></property>
+     </widget>
+     <widget class="QPushButton" name="btnServicosNovo">
+      <property name="geometry"><rect><x>850</x><y>80</y><width>101</width><height>24</height></rect></property>
+      <property name="styleSheet"><string notr="true">background-color: rgb(85, 170, 0); color: rgb(255, 255, 255);</string></property>
+      <property name="text"><string>Novo Serviço</string></property>
+     </widget>
+     <widget class="QTableWidget" name="tabelaServicos">
+      <property name="geometry"><rect><x>110</x><y>130</y><width>831</width><height>471</height></rect></property>
+      <property name="columnCount"><number>6</number></property>
+      <column><property name="text"><string>ID</string></property></column>
+      <column><property name="text"><string>CLIENTE</string></property></column>
+      <column><property name="text"><string>BICICLETA</string></property></column>
+      <column><property name="text"><string>DESCRIÇÃO</string></property></column>
+      <column><property name="text"><string>VALOR</string></property></column>
+      <column><property name="text"><string>STATUS</string></property></column>
+     </widget>
+    </widget>
+    <!-- PAGE 8: Cadastro de Serviço -->
+    <widget class="QWidget" name="cadServico">
+     <widget class="QLabel" name="label_ser2">
+      <property name="geometry"><rect><x>20</x><y>20</y><width>281</width><height>21</height></rect></property>
+      <property name="font"><font><pointsize>18</pointsize><bold>true</bold></font></property>
+      <property name="text"><string>Cadastro de Serviço</string></property>
+     </widget>
+     <widget class="QFrame" name="frameCadServico">
+      <property name="geometry"><rect><x>210</x><y>100</y><width>611</width><height>421</height></rect></property>
+      <property name="styleSheet"><string notr="true">background-color: rgb(232, 232, 232);</string></property>
+      <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+      <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+      <widget class="QLabel" name="label_ser3">
+       <property name="geometry"><rect><x>50</x><y>20</y><width>81</width><height>16</height></rect></property>
+       <property name="text"><string>Bicicleta:</string></property>
+      </widget>
+      <widget class="QComboBox" name="comboCadServicoBicicleta">
+       <property name="geometry"><rect><x>50</x><y>40</y><width>531</width><height>22</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QLabel" name="label_ser4">
+       <property name="geometry"><rect><x>50</x><y>70</y><width>71</width><height>16</height></rect></property>
+       <property name="text"><string>Descrição:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadServicoDescricao">
+       <property name="geometry"><rect><x>50</x><y>90</y><width>531</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QLabel" name="label_ser5">
+       <property name="geometry"><rect><x>50</x><y>120</y><width>49</width><height>16</height></rect></property>
+       <property name="text"><string>Valor (R$):</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadServicoValor">
+       <property name="geometry"><rect><x>50</x><y>140</y><width>151</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+      </widget>
+      <widget class="QLabel" name="label_ser6">
+       <property name="geometry"><rect><x>250</x><y>120</y><width>51</width><height>16</height></rect></property>
+       <property name="text"><string>Status:</string></property>
+      </widget>
+      <widget class="QComboBox" name="comboCadServicoStatus">
+       <property name="geometry"><rect><x>250</x><y>140</y><width>181</width><height>22</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+       <item><property name="text"><string>Em andamento</string></property></item>
+       <item><property name="text"><string>Aguardando peça</string></property></item>
+       <item><property name="text"><string>Concluído</string></property></item>
+       <item><property name="text"><string>Cancelado</string></property></item>
+      </widget>
+      <widget class="QLabel" name="label_ser7">
+       <property name="geometry"><rect><x>50</x><y>175</y><width>101</width><height>16</height></rect></property>
+       <property name="text"><string>Data de Entrada:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadServicoDataEntrada">
+       <property name="geometry"><rect><x>50</x><y>195</y><width>151</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+       <property name="placeholderText"><string>AAAA-MM-DD</string></property>
+      </widget>
+      <widget class="QLabel" name="label_ser8">
+       <property name="geometry"><rect><x>250</x><y>175</y><width>101</width><height>16</height></rect></property>
+       <property name="text"><string>Data de Saída:</string></property>
+      </widget>
+      <widget class="QLineEdit" name="inputCadServicoDataSaida">
+       <property name="geometry"><rect><x>250</x><y>195</y><width>151</width><height>21</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);</string></property>
+       <property name="placeholderText"><string>AAAA-MM-DD</string></property>
+      </widget>
+      <widget class="QPushButton" name="btnCadServicoCadastrar">
+       <property name="geometry"><rect><x>500</x><y>370</y><width>75</width><height>24</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: rgb(85, 170, 0); color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>Cadastrar</string></property>
+      </widget>
+      <widget class="QPushButton" name="btnCadServicoVoltar">
+       <property name="geometry"><rect><x>50</x><y>370</y><width>75</width><height>24</height></rect></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255); background-color: rgb(126, 126, 126);</string></property>
+       <property name="text"><string>Cancelar</string></property>
+      </widget>
+     </widget>
+    </widget>
+    <!-- PAGE 9: Relatórios / Resumo -->
+    <widget class="QWidget" name="relatorios">
+     <widget class="QLabel" name="label_rel1">
+      <property name="geometry"><rect><x>20</x><y>10</y><width>181</width><height>41</height></rect></property>
+      <property name="font"><font><pointsize>18</pointsize><bold>true</bold></font></property>
+      <property name="text"><string>Relatórios</string></property>
+     </widget>
+     <widget class="QFrame" name="frameResumo">
+      <property name="geometry"><rect><x>110</x><y>60</y><width>831</width><height>80</height></rect></property>
+      <property name="styleSheet"><string notr="true">background-color: rgb(52, 82, 255);</string></property>
+      <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+      <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+      <widget class="QLabel" name="label_rel2">
+       <property name="geometry"><rect><x>20</x><y>10</y><width>121</width><height>16</height></rect></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>Total de Serviços:</string></property>
+      </widget>
+      <widget class="QLabel" name="labelResumoTotalServicos">
+       <property name="geometry"><rect><x>20</x><y>35</y><width>121</width><height>21</height></rect></property>
+       <property name="font"><font><pointsize>14</pointsize><bold>true</bold></font></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>0</string></property>
+      </widget>
+      <widget class="QLabel" name="label_rel3">
+       <property name="geometry"><rect><x>200</x><y>10</y><width>121</width><height>16</height></rect></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>Valor Total:</string></property>
+      </widget>
+      <widget class="QLabel" name="labelResumoTotalValor">
+       <property name="geometry"><rect><x>200</x><y>35</y><width>151</width><height>21</height></rect></property>
+       <property name="font"><font><pointsize>14</pointsize><bold>true</bold></font></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>R$ 0,00</string></property>
+      </widget>
+      <widget class="QLabel" name="label_rel4">
+       <property name="geometry"><rect><x>420</x><y>10</y><width>121</width><height>16</height></rect></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>Em Andamento:</string></property>
+      </widget>
+      <widget class="QLabel" name="labelResumoEmAndamento">
+       <property name="geometry"><rect><x>420</x><y>35</y><width>121</width><height>21</height></rect></property>
+       <property name="font"><font><pointsize>14</pointsize><bold>true</bold></font></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>0</string></property>
+      </widget>
+      <widget class="QLabel" name="label_rel5">
+       <property name="geometry"><rect><x>620</x><y>10</y><width>101</width><height>16</height></rect></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>Concluídos:</string></property>
+      </widget>
+      <widget class="QLabel" name="labelResumoConcluidos">
+       <property name="geometry"><rect><x>620</x><y>35</y><width>101</width><height>21</height></rect></property>
+       <property name="font"><font><pointsize>14</pointsize><bold>true</bold></font></property>
+       <property name="styleSheet"><string notr="true">color: rgb(255, 255, 255);</string></property>
+       <property name="text"><string>0</string></property>
+      </widget>
+     </widget>
+     <widget class="QTableWidget" name="tabelaResumo">
+      <property name="geometry"><rect><x>110</x><y>160</y><width>831</width><height>441</height></rect></property>
+      <property name="columnCount"><number>7</number></property>
+      <column><property name="text"><string>ID</string></property></column>
+      <column><property name="text"><string>CLIENTE</string></property></column>
+      <column><property name="text"><string>BICICLETA</string></property></column>
+      <column><property name="text"><string>DESCRIÇÃO</string></property></column>
+      <column><property name="text"><string>VALOR</string></property></column>
+      <column><property name="text"><string>STATUS</string></property></column>
+      <column><property name="text"><string>DATA ENTRADA</string></property></column>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
