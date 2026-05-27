@@ -1,0 +1,59 @@
+cadastro:
+    -nome
+    -sobrenome
+    -data de nascimento
+        -se menor:
+            -nome do pai
+            -nome da mãe
+    -celular
+    -email
+    -CPF
+    login:
+        emil ou CPF ou celular
+    senha:
+        -8 caracteres
+        -conter letras e numerso
+        -sem caracteres especiais 
+
+acesso:
+    usuario_aluno:
+        1° gratuito: acesso limitado
+            - acesso a lista com gabarito
+            - acesso a ao 1° exercicio das listas com resolução:
+        2° paga: acesso total
+            -acesso a listas com gabarito 
+            -acesso a lista com resolução
+    usuario_professor: (?????????)
+        1° gratuito: acesso limitado
+            - acesso a lista com gabarito
+            - acesso a ao 1° exercicio das listas com resolução:
+        2° paga: acesso total
+            -acesso a listas com gabarito 
+            -acesso a lista com resolução
+            -uploud de lista (??????)
+listas:
+    conta_gratuito:
+        com gabarito:
+            -5 exercicios por conteúdo
+            -niveis:
+                -facil
+                -medio
+                -dificil
+    conta_paga:
+        com resolução
+            -todos os exercicios
+            -niveis:
+                -facil
+                -medio
+                -dificil
+valores:
+    conta_gratuita:
+        -lista com 5 exercicios -->1 moeda
+        -lista com 10 exercicios -->2 moeda
+        -lista 20 exercicios -->3 moedas
+    conta_paga:
+        -plano anual: R$109,50
+comprando moedas: 
+    R$10,00 -->15 moedas
+    R$20,00 -->45 moedas
+    R$30,00 -->75 moedas
