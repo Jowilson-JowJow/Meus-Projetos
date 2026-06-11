@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizador de Questões de Física</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+        .caixa-questao { border: 1px solid #ccc; padding: 20px; border-radius: 8px; background-color: #f9f9f9; }
+        .area-grafico { margin: 20px 0; text-align: center; max-width: 100%; }
+        /* Garante que o SVG extraído se ajuste à tela responsivamente */
+        .area-grafico svg { max-width: 100%; height: auto; border: 1px dashed #bbb; padding: 10px; background: white; }
+        .alternativa { margin: 10px 0; padding: 10px; background: white; border: 1px solid #e0e0e0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <h2>Questão Cadastrada</h2>
+    <div class="caixa-questao">
+        <p id="enunciado">Carregando enunciado...</p>
+        
+        <div id="grafico" class="area-grafico"></div>
+        
+        <div id="alternativas"></div>
+    </div>
+
+    <script>
+        // Simulando a chegada dos dados estruturados do banco de dados via API
+        // Quando criar sua API de consulta, basta trocar isso por um fetch('buscar_questao.php')
+        const dadosDoBanco = {
+            "enunciado": "Um automóvel move-se em linha reta com velocidade variando em função do tempo de acordo com o gráfico apresentado abaixo. Determine a distância percorrida pelo veículo nos primeiros 10 segundos.",
+            "codigo_svg": "<svg width='300' height='150'><rect width='300' height='150' fill='#eee'/><line x1='30' y1='120' x2='280' y2='120' stroke='black' stroke-width='2'/><line x1='30' y1='20' x2='30' y2='120' stroke='black' stroke-width='2'/><path d='M30,120 L130,40 L250,40' fill='none' stroke='red' stroke-width='3'/><text x='260' y='135'>t(s)</text><text x='10' y='30'>v(m/s)</text></svg>",
+            "alternativas": {
+                "A": "100 metros",
+                "B": "150 metros",
+                "C": "200 metros",
+                "D": "250 metros"
+            }
+        };
+
+        // Renderização dinâmica no HTML usando JavaScript
+        document.getElementById('enunciado').innerText = dadosDoBanco.enunciado;
+        
+        // Injeta o código SVG puro. O navegador interpreta os vetores na hora!
+        document.getElementById('grafico').innerHTML = dadosDoBanco.codigo_svg;
+        
+        // Lista as alternativas
+        let htmlAlternativas = "";
+        for (const [letra, texto] of Object.entries(dadosDoBanco.alternativas)) {
+            htmlAlternativas += `<div class="alternativa"><strong>${letra})</strong> ${texto}</div>`;
+        }
+        document.getElementById('alternativas').innerHTML = htmlAlternativas;
+    </script>
+</body>
+</html>
