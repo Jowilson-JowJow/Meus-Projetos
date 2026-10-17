@@ -64,7 +64,7 @@ a DAO é responsavel exclusivamete por conversar com o banco de dados. conectand
 
         public function __construct(){
             //inicializa a coexão com o banco usando PDO
-            $this->conexao = new PDO("mysql:host = " . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
+            $this->conexao = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
         }
 
         public function inserir(UsuarioModel $usuario){
@@ -88,6 +88,77 @@ a DAO é responsavel exclusivamete por conversar com o banco de dados. conectand
 1.5 criando o controller
 -------------------------
 
+primeiro criar a pasta Controller depois criar o arquivo UsuarioController.php
+
+<?php
+
+    class UsuarioController{
+        public function salvar(){
+            //cria o modelo e reenche com os dados enviados via POST pelo formulario
+            $model = new UsuarioModel();
+            $model->nome = $_POST['nome'];
+            $model->email = $_POST['email'];
+            $model->senha = $_POST['senha'];
+
+            //envia o modelo para a DAO realizar a gravaçãono banco
+            $dao = new UsuarioDAO();
+            $dao->inserir($model);
+
+            //redireciona para a agina de login após o cadastro
+            header('Location: /primeiro_mvc/login');
+        }
+    }
 
 
+?>
+
+---------------------
+1.6 criando a View
+---------------------
+
+primeiro criar a pasta View e dentro da pasta criar o arquivo form_usuario.php
+
+esse arquivo ´o que vai ser responsavl em criar o html ou seja o formulario da pagina de cadastro e login
+
+<?php
+    include_once __DIR__ . '/../Includes/header.php';
+?>
+<main class = "container mt-5">
+    <div class = "row justify-content-center">
+        <div class = "col-md-6">
+            <div class = "card shadow">
+                <div class ="card-header bg-primary text-white">
+                    <h4 class = "mb-0">Cadastro de Usuário</h4>
+                </div>
+                <div class="card-body">
+                    <form action = "/primeiro_mvc?usuario/salvar" method = "POST">
+                        <div class ="mb-3">
+                            <label for = "nome" class="form-label">Nome Completo:</label>
+                            <input type = "text" class="form-control" id="nome" name="nome" required>
+                        </div>
+                        
+                        <div class ="mb-3">
+                            <label for = "email" class="form-label">E-mail:</label>
+                            <input type = "email" class="form-control" id="email" name="email" required>
+                        </div>
+                        
+                        <div class ="mb-3">
+                            <label for = "senha" class="form-label">Senha:</label>
+                            <input type = "password" class="form-control" id="senha" name="senha" required>
+                        </div>
+
+                        <div class=d-grid gap-2>
+                            <button type="submit" class="btn-success">Salvar Cadastro</button>
+                            <a href="/primeiro_mvc/usuario/listar" class="btn btn_secondary">Voltar para a lista</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<?php
+    include_once __DIR__ . '/../Includes/footer.php';
+?>
 

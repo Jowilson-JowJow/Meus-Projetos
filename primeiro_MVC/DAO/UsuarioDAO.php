@@ -5,7 +5,7 @@
 
         public function __construct(){
             //inicializa a coexão com o banco usando PDO
-            $this->conexao = new PDO("mysql:host = " . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
+            $this->conexao = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
         }
 
         public function inserir(UsuarioModel $usuario){
