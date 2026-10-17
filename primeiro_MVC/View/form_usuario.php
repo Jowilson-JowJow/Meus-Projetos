@@ -9,7 +9,7 @@
                     <h4 class = "mb-0">Cadastro de Usuário</h4>
                 </div>
                 <div class="card-body">
-                    <form action = "/primeiro_mvc/usuario/salvar" method = "POST">
+                    <form action="/primeiro_mvc/index.php?url=usuario/salvar" method="POST">
                         <div class ="mb-3">
                             <label for = "nome" class="form-label">Nome Completo:</label>
                             <input type = "text" class="form-control" id="nome" name="nome" required>
@@ -27,7 +27,7 @@
 
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-success">Salvar Cadastro</button>
-                            <a href="/primeiro_mvc/usuario/listar" class="btn btn-secondary">Voltar para a lista</a>
+                            <a href="/primeiro_mvc/index.php?url=usuario/loginForm" class="btn btn-secondary">Já tenho conta</a>
                         </div>
                     </form>
                 </div>

@@ -6,13 +6,13 @@ vou construir a tela de cadastro e login no formato mvc(model-view-controller) e
 o banco de dados deve ter para o cadastro: nome, email e senha.
 
 CREATE DATABASE IF NOT EXISTS primeiro_mvc;
-USE primeir_mvc;
+USE primeiro_mvc;
 
 CREATE TABLE IF NOT EXISTS usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    senha VARCHAR(20) NOT NULL
+    senha VARCHAR(255) NOT NULL
 );
 
 ----------------------------------------------------------
@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS usuario (
 definir constantes globais com as credenciais de acesso ao bano de dados mysql.
 
 <?php
+
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
@@ -64,7 +65,7 @@ a DAO é responsavel exclusivamete por conversar com o banco de dados. conectand
 
         public function __construct(){
             //inicializa a coexão com o banco usando PDO
-            $this->conexao = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
+            $this->conexao = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASS, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
         }
 
         public function inserir(UsuarioModel $usuario){
@@ -105,7 +106,8 @@ primeiro criar a pasta Controller depois criar o arquivo UsuarioController.php
             $dao->inserir($model);
 
             //redireciona para a agina de login após o cadastro
-            header('Location: /primeiro_mvc/login');
+            header('Location: /primeiro_mvc/index.php?url=usuario/loginForm');
+            exit;
         }
     }
 
@@ -131,7 +133,7 @@ esse arquivo ´o que vai ser responsavl em criar o html ou seja o formulario da 
                     <h4 class = "mb-0">Cadastro de Usuário</h4>
                 </div>
                 <div class="card-body">
-                    <form action = "/primeiro_mvc?usuario/salvar" method = "POST">
+                    <form action="/primeiro_mvc/index.php?url=usuario/salvar" method="POST">
                         <div class ="mb-3">
                             <label for = "nome" class="form-label">Nome Completo:</label>
                             <input type = "text" class="form-control" id="nome" name="nome" required>
@@ -147,9 +149,9 @@ esse arquivo ´o que vai ser responsavl em criar o html ou seja o formulario da 
                             <input type = "password" class="form-control" id="senha" name="senha" required>
                         </div>
 
-                        <div class=d-grid gap-2>
-                            <button type="submit" class="btn-success">Salvar Cadastro</button>
-                            <a href="/primeiro_mvc/usuario/listar" class="btn btn_secondary">Voltar para a lista</a>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Salvar Cadastro</button>
+                            <a href="/primeiro_mvc/index.php?url=usuario/loginForm" class="btn btn-secondary">Já tenho conta</a>
                         </div>
                     </form>
                 </div>
@@ -161,4 +163,3 @@ esse arquivo ´o que vai ser responsavl em criar o html ou seja o formulario da 
 <?php
     include_once __DIR__ . '/../Includes/footer.php';
 ?>
-

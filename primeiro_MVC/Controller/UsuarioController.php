@@ -13,7 +13,12 @@
             $dao->inserir($model);
 
             //redireciona para a agina de login após o cadastro
-            header('Location: /primeiro_mvc/login');
+            header('Location: /primeiro_mvc/index.php?url=usuario/loginForm');
+            exit;
+        }
+        
+        public function form(){
+            include __DIR__ . '/../View/form_usuario.php';
         }
     }
 
